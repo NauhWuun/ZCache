@@ -17,17 +17,12 @@ package cool;
  *     (t (function y (x y)))))
  *  (throws)
  */
-
 public class ValidParams 
 {
-	private static LogSystem ValidLog = SingleTon.GetInstance(LogSystem.class);
-
     public static void IsTrue(boolean expression, String message, boolean _throws) {
         if (! expression) {
         	if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
         }
     }
 
@@ -35,8 +30,6 @@ public class ValidParams
     	if (expression == null) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -53,8 +46,6 @@ public class ValidParams
     	if (expression == "" || expression == null || "".equals(expression)) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -66,8 +57,6 @@ public class ValidParams
     	if (expression == null) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -75,8 +64,6 @@ public class ValidParams
     	if (expression_1 != expression_2) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -84,8 +71,6 @@ public class ValidParams
     	if ((Integer)expression < 0) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -93,8 +78,6 @@ public class ValidParams
     	if ((Integer)expression <= 0) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -102,8 +85,6 @@ public class ValidParams
     	if (expression < 0) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -111,8 +92,6 @@ public class ValidParams
     	if (expression <= 0) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -120,8 +99,6 @@ public class ValidParams
     	if (expression < 0) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 
@@ -129,8 +106,7 @@ public class ValidParams
     	if (expression <= 0) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
+
     	}
     }
 
@@ -138,8 +114,6 @@ public class ValidParams
     	if ((Integer)expression > (Integer)greater) {
     		if (_throws)
         		throw new IllegalArgumentException(message);
-        	else
-        		ValidLog.Get2Console(message);
     	}
     }
 }

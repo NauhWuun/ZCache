@@ -1,6 +1,6 @@
-package log-core;
+package cool;
 
-public final class FNV 
+public final class HashAlgorithm 
 {
     private static final long FNV_64_INIT  = 0xcbf29ce484222325L;
     private static final long FNV_64_PRIME = 0x100000001b3L;

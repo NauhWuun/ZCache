@@ -18,7 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
  *		   @Cloning<p>
  *		   @Combination QueueObject<p>
  */
-
 public class SingleTon<T> implements Serializable 
 {
 	@SuppressWarnings("rawtypes")
