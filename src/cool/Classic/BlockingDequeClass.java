@@ -1,10 +1,34 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
+import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
 
-public class BlockingDequeClass implements CallFuctor 
+public class BlockingDequeClass<T> implements Serializable 
 {
-    public Object call(Object obj) {
-        return null;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -4693456574008334403L;
+    private BlockingDeque<T> values;
+
+    public BlockingDequeClass() {
+        this(new LinkedBlockingDeque<T>());
+    }
+
+    public BlockingDequeClass(BlockingDeque<T> value) {
+        set(value);
+    }
+
+    private void set(BlockingDeque<T> value) {
+        this.values = value;
+    }
+
+    public BlockingDeque<T> get() {
+        return values;
+    }
+
+    public String toString() {
+        return "[" + BlockingDequeClass.class + "]" + "\r\n";
     }
 }

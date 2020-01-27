@@ -1,10 +1,30 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
 
-public class HibernateCacheClass implements CallFuctor 
+import cool.External.HibernateCache;
+
+public class HibernateCacheClass implements Serializable 
 {
-    public Object call(Object obj) {
-        return null;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -421325768472696694L;
+    private HibernateCache hCache;
+
+    public HibernateCacheClass(HibernateCache value) {
+        set(value);
+    }
+
+    private void set(HibernateCache value) {
+        this.hCache = value;
+    }
+
+    public HibernateCache get() {
+        return hCache;
+    }
+
+    public String toString() {
+        return "[" + HibernateCacheClass.class + "]" + "\r\n";
     }
 }

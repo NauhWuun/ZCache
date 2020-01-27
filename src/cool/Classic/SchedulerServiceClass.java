@@ -1,10 +1,30 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
 
-public class SchedulerServiceClass implements CallFuctor 
+import cool.External.SchedulerService;
+
+public class SchedulerServiceClass implements Serializable 
 {
-    public Object call(Object obj) {
-        return null;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8027863238146868109L;
+    private SchedulerService hCache;
+
+    public SchedulerServiceClass(SchedulerService value) {
+        set(value);
+    }
+
+    private void set(SchedulerService value) {
+        this.hCache = value;
+    }
+
+    public SchedulerService get() {
+        return hCache;
+    }
+
+    public String toString() {
+        return "[" + SchedulerServiceClass.class + "]" + "\r\n";
     }
 }

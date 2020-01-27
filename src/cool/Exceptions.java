@@ -2,7 +2,7 @@ package cool;
 
 public class Exceptions extends Throwable 
 {
-    private static final long serialVersionUID = -3042681234568047285L;
+    private static final long serialVersionUID = -3387516993124229948L;;
 
     private String detailMessage;
 

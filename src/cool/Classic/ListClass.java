@@ -1,13 +1,34 @@
 package cool.Classic;
 
-import java.util.Collections;
-import java.util.LinkedList;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import cool.CallFuctor;
-
-public class ListClass implements CallFuctor
+public class ListClass<T> implements Serializable
 {
-    public <T> T call(T obj) {
-        return (T) Collections.singletonList(new LinkedList<Object>().add(obj));
+    /**
+     *
+     */
+    private static final long serialVersionUID = 918227119451148485L;
+    private List<T> values;
+
+    public ListClass() { 
+        this(new ArrayList<T>());
+    }
+
+    public ListClass(List<T> value) {
+        set(value);
+    }
+
+    private void set(List<T> value) {
+        this.values = value;
+    }
+
+    public List<T> get() {
+        return values;
+    }
+
+    public String toString() {
+        return "[" + ListClass.class + "]" + "\r\n";
     }
 }

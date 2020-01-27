@@ -1,10 +1,31 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
 
-public class SpringSessionClass implements CallFuctor 
+import cool.External.SpringSession;
+
+public class SpringSessionClass implements Serializable
 {
-    public Object call(Object obj) {
-        return null;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -7087440057164976898L;
+
+    private SpringSession hCache;
+
+    public SpringSessionClass(SpringSession value) {
+        set(value);
+    }
+
+    private void set(SpringSession value) {
+        this.hCache = value;
+    }
+
+    public SpringSession get() {
+        return hCache;
+    }
+
+    public String toString() {
+        return "[" + SpringSessionClass.class + "]" + "\r\n";
     }
 }

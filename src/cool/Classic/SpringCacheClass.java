@@ -1,10 +1,31 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
 
-public class SpringCacheClass implements CallFuctor 
+import cool.External.SpringCache;
+
+public class SpringCacheClass implements Serializable
 {
-    public Object call(Object obj) {
-        return null;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -5929040102284133738L;
+
+    private SpringCache hCache;
+
+    public SpringCacheClass(SpringCache value) {
+        set(value);
+    }
+
+    private void set(SpringCache value) {
+        this.hCache = value;
+    }
+
+    public SpringCache get() {
+        return hCache;
+    }
+
+    public String toString() {
+        return "[" + SpringCacheClass.class + "]" + "\r\n";
     }
 }

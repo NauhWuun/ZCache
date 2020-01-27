@@ -1,21 +1,21 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
 
-public class StringClass implements CallFuctor
+public class StringClass implements Serializable
 {
+    /**
+     *
+     */
+    private static final long serialVersionUID = -3438405104303347317L;
     private String values;
 
     public StringClass() { 
-        this("");
+        this(String.valueOf(""));
     }
 
     public StringClass(String value) {
         set(value);
-    }
-
-    public <T> T call(T obj) {
-        return obj;
     }
 
     private void set(String value) {
@@ -27,7 +27,6 @@ public class StringClass implements CallFuctor
     }
 
     public String toString() {
-        return "[" + StringClass.class + "]" + "\t" +
-            get() + "\r\n";
+        return "[" + StringClass.class + "]" + "\r\n";
     }
 }

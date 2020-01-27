@@ -1,0 +1,68 @@
+package cool;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import cool.Classic.StringClass;
+
+public class TypeSerializer 
+{
+    public static Object read(byte[] inBytes) {
+        ByteArrayInputStream bis = new ByteArrayInputStream(inBytes);
+        ObjectInput in = null;
+        Object obj = null;
+
+        try {
+            in = new ObjectInputStream(bis);
+            obj = (Object) in.readObject();
+        } catch(IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (in != null)
+                    in.close();
+            } catch (IOException ex) {
+            }
+        }
+
+        return obj;
+    }
+
+    public static byte[] write(Object obj) {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream out = null;
+        byte[] outBytes = { 0x0 };
+
+        try {
+            out = new ObjectOutputStream(bos);   
+            out.writeObject(obj);
+            out.flush();
+            outBytes = bos.toByteArray();
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bos.close();
+            } catch (IOException ex) {
+            }
+        }
+
+        return outBytes;
+    }
+
+    public static void main(String[] args) {
+        StringClass cls = new StringClass();
+
+        byte[] outBytes = TypeSerializer.write(cls);
+        System.out.println(outBytes);
+
+        cls = (StringClass) TypeSerializer.read(outBytes);
+        System.out.println(cls.get());
+    }
+}

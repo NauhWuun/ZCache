@@ -3,7 +3,7 @@ package cool.Cached;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import cool.ByteIO;
+import cool.Bytes;
 import cool.HashAlgorithm;
 import cool.Unchecked;
 
@@ -15,7 +15,7 @@ public class VALUE {
     }
 
     public VALUE(final String params) {
-        param = ByteIO.convertToByteArray(params);
+        param = Bytes.convertToByteArray(params);
     }
 
     @Unchecked
@@ -28,7 +28,7 @@ public class VALUE {
     }
 
     public final String getValue() {
-        return ByteIO.convertToString(param);
+        return Bytes.ConvertBytesToString(param);
     }
 
     public final long hashKey(final long key) {

@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.ZCached</groupId>
+    <artifactId>ZCached</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <description>ZCached = This Is New Cache Kit.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dist.phase>install</dist.phase>
+        <dist.base>${project.basedir}/dist</dist.base>
+        <dist.windowsExecutableVersion>${project.version}.0</dist.windowsExecutableVersion>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <skip.git.info>false</skip.git.info>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.maxmind.geoip2</groupId>
+            <artifactId>geoip2</artifactId>
+            <version>2.13.0</version>
+        </dependency> 
+
+        <!-- org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.10.Final</version>
+        </dependency>
+
+        <!-- Snappy Java -->
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>1.1.7.3</version>
+        </dependency>
+
+        <!-- Logging framework -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+
+        <!-- msgpack-core -->
+        <dependency>
+            <groupId>org.msgpack</groupId>
+            <artifactId>msgpack-core</artifactId>
+            <version>0.8.20</version>
+        </dependency>
+
+        <!-- guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.2-jre</version>
+        </dependency>
+
+    </dependencies>
+</project>

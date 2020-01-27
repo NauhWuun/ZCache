@@ -1,33 +1,34 @@
 package cool.Classic;
 
-import cool.CallFuctor;
+import java.io.Serializable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class TomcatSessionClass implements CallFuctor 
+public class TomcatSessionClass implements Serializable
 {
-    private String values;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4772758589209976302L;
+    protected Map<String, Object> attributes = new ConcurrentHashMap<String, Object>();
 
-    public StringClass() { 
-        this("");
+    public TomcatSessionClass() { 
+        this("", new Object());
     }
 
-    public StringClass(String value) {
-        set(value);
+    public TomcatSessionClass(String key, Object value) {
+        set(key, value);
     }
 
-    public <T> T call(T obj) {
-        return obj;
+    private void set(String key, Object value) {
+        attributes.put(key, value);
     }
 
-    private void set(String value) {
-        this.values = value;
-    }
-
-    public String get() {
-        return values;
+    public Object get(String key) {
+        return attributes.get(key);
     }
 
     public String toString() {
-        return "[" + StringClass.class + "]" + "\t" +
-            get() + "\r\n";
+        return "[" + TomcatSessionClass.class + "]" + "\r\n";
     }
 }

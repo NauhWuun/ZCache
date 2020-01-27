@@ -5,13 +5,13 @@ import cool.RockRand;
 
 public class KEY 
 {
-    long    key        = 1;
-    long    createTime = 1;
-    long    timeOut    = 1;
-    boolean priority   = false;
+    private long    key        = 1;
+    private long    createTime = 1;
+    private long    timeOut    = 1;
+    private boolean priority   = false;
 
     public KEY() {
-        this(1000 * 60, RockRand.getUnsignedLong(), false);
+        this(1000 * 10, RockRand.getUnsignedLong(), false);
     }
 
     public KEY(final long timeout, final long key, final boolean priority) {
@@ -21,8 +21,8 @@ public class KEY
         this.setTimeOut(timeout);
     }
 
-    private final KEY setPriority(final boolean _priority) {
-        return new KEY(10, RockRand.getUnsignedLong(), _priority);
+    private final void setPriority(final boolean _priority) {
+        this.priority = _priority;
     }
 
     public final boolean getPriority() {
@@ -64,6 +64,6 @@ public class KEY
     }
 
     public Boolean validator() {
-        return  key > 0 && createTime > 0 && timeOut > 0; 
+        return key > 0 && createTime > 0 && timeOut > 0; 
     }
 }
