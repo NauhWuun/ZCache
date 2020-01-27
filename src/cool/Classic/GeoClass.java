@@ -10,21 +10,21 @@ public class GeoClass implements Serializable
      *
      */
     private static final long serialVersionUID = -1558332586792596555L;
-    private String values;
+    private Geo values;
 
     public GeoClass() {
-        set(String.valueOf("127.0.0.1"));
+        set(new Geo());
     }
 
-    public GeoClass(String value) {
+    public GeoClass(Geo value) {
         set(value);
     }
 
-    private void set(String value) {
-        this.values = geo_1;
+    private void set(Geo value) {
+        this.values = value;
     }
 
-    public String get() {
+    public Geo get() {
         return values;
     }
 

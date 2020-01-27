@@ -7,8 +7,6 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import cool.Classic.StringClass;
-
 public class TypeSerializer 
 {
     public static Object read(byte[] inBytes) {
@@ -54,15 +52,5 @@ public class TypeSerializer
         }
 
         return outBytes;
-    }
-
-    public static void main(String[] args) {
-        StringClass cls = new StringClass();
-
-        byte[] outBytes = TypeSerializer.write(cls);
-        System.out.println(outBytes);
-
-        cls = (StringClass) TypeSerializer.read(outBytes);
-        System.out.println(cls.get());
     }
 }
