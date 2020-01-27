@@ -4,6 +4,8 @@ import java.util.BitSet;
 import java.util.Random;
 import java.util.Iterator;
 
+import cool.HashAlgorithm;
+
 /**
  * com.github.lovasoa.bloomfilter;
  */
@@ -79,7 +81,7 @@ public class BloomFilter implements Cloneable
      * Generate a unique hash representing the filter
      **/
     public int hashCode() {
-        return hashes.hashCode() ^ k;
+        return HashAlgorithm.FNV1A_64_HASH(String.valueOf(k));
     }
 
     /**
@@ -102,7 +104,8 @@ public class BloomFilter implements Cloneable
         this.hashes.or(other.hashes);
     }
 
-    private class RandomInRange implements Iterable<RandomInRange>, Iterator<RandomInRange> {
+    private class RandomInRange implements Iterable<RandomInRange>, Iterator<RandomInRange> 
+    {
         private Random prng;
         private int max; // Maximum value returned + 1
         private int count; // Number of random elements to generate
