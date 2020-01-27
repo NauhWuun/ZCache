@@ -2,26 +2,24 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.RemoteService;
-
-public class RemoteServiceClass implements Serializable 
+public class RemoteServiceClass<Channel> implements Serializable 
 {   
     /**
      *
      */
     private static final long serialVersionUID = -533887550694157773L;
-    private RemoteService hCache;
+    private Channel values;
 
-    public RemoteServiceClass(RemoteService value) {
+    public RemoteServiceClass(Channel value) {
         set(value);
     }
 
-    private void set(RemoteService value) {
-        this.hCache = value;
+    private void set(Channel value) {
+        this.values = value;
     }
 
-    public RemoteService get() {
-        return hCache;
+    public Channel get() {
+        return values;
     }
 
     public String toString() {

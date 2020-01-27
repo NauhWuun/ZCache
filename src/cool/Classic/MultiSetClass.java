@@ -2,25 +2,23 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.MultiSet;
-
 public class MultiSetClass<T> implements Serializable 
 {
     /**
      *
      */
     private static final long serialVersionUID = -1134526908326779600L;
-    private MultiSet<T> hCache;
+    private Set<T> hCache;
 
-    public MultiSetClass(MultiSet<T> value) {
+    public MultiSetClass(Set<T> value) {
         set(value);
     }
 
-    private void set(MultiSet<T> value) {
+    private void set(Set<T> value) {
         this.hCache = value;
     }
 
-    public MultiSet<T> get() {
+    public Set<T> get() {
         return hCache;
     }
 

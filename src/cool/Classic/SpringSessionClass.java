@@ -2,27 +2,25 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.SpringSession;
-
-public class SpringSessionClass implements Serializable
+public class SpringSessionClass<JsonObject> implements Serializable
 {
     /**
      *
      */
     private static final long serialVersionUID = -7087440057164976898L;
 
-    private SpringSession hCache;
+    private JsonObject ssCache;
 
-    public SpringSessionClass(SpringSession value) {
+    public SpringSessionClass(JsonObject value) {
         set(value);
     }
 
-    private void set(SpringSession value) {
-        this.hCache = value;
+    private void set(JsonObject value) {
+        this.ssCache = value;
     }
 
-    public SpringSession get() {
-        return hCache;
+    public JsonObject get() {
+        return ssCache;
     }
 
     public String toString() {

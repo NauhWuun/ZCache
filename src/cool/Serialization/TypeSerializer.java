@@ -1,4 +1,4 @@
-package cool;
+package cool.Serialization;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -7,8 +7,9 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class TypeSerializer 
+public class TypeSerializer implements Serializabler
 {
+    @Override
     public static Object read(byte[] inBytes) {
         ByteArrayInputStream bis = new ByteArrayInputStream(inBytes);
         ObjectInput in = null;
@@ -32,6 +33,7 @@ public class TypeSerializer
         return obj;
     }
 
+    @Override
     public static byte[] write(Object obj) {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream out = null;

@@ -2,27 +2,25 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.SpringCache;
-
-public class SpringCacheClass implements Serializable
+public class SpringCacheClass<JsonObject> implements Serializable
 {
     /**
      *
      */
     private static final long serialVersionUID = -5929040102284133738L;
 
-    private SpringCache hCache;
+    private JsonObject sCache;
 
-    public SpringCacheClass(SpringCache value) {
+    public SpringCacheClass(JsonObject value) {
         set(value);
     }
 
-    private void set(SpringCache value) {
-        this.hCache = value;
+    private void set(JsonObject value) {
+        this.sCache = value;
     }
 
-    public SpringCache get() {
-        return hCache;
+    public JsonObject get() {
+        return sCache;
     }
 
     public String toString() {

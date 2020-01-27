@@ -2,26 +2,24 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.SchedulerService;
-
-public class SchedulerServiceClass implements Serializable 
+public class SchedulerServiceClass<JsonObject> implements Serializable 
 {
     /**
      *
      */
     private static final long serialVersionUID = 8027863238146868109L;
-    private SchedulerService hCache;
+    private JsonObject values;
 
-    public SchedulerServiceClass(SchedulerService value) {
+    public SchedulerServiceClass(JsonObject value) {
         set(value);
     }
 
-    private void set(SchedulerService value) {
-        this.hCache = value;
+    private void set(JsonObject value) {
+        this.values = value;
     }
 
-    public SchedulerService get() {
-        return hCache;
+    public JsonObject get() {
+        return values;
     }
 
     public String toString() {

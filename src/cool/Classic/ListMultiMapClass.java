@@ -2,7 +2,7 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.ListMultiMap;
+import antlr.collections.List;
 
 public class ListMultiMapClass<K, V> implements Serializable 
 {
@@ -10,17 +10,17 @@ public class ListMultiMapClass<K, V> implements Serializable
      *
      */
     private static final long serialVersionUID = -2772044646058930471L;
-    private Map<K, V> maps;
+    private List<K, V> maps;
 
-    public ListMultiMapClass(Map<K, V> value) {
+    public ListMultiMapClass(List<K, V> value) {
         set(value);
     }
 
-    private void set(Map<K, V> value) {
+    private void set(List<K, V> value) {
         this.maps = value;
     }
 
-    public Map<K, V> get() {
+    public List<K, V> get() {
         return maps;
     }
 

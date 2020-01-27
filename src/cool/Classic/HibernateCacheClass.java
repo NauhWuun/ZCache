@@ -10,17 +10,17 @@ public class HibernateCacheClass implements Serializable
      *
      */
     private static final long serialVersionUID = -421325768472696694L;
-    private HibernateCache hCache;
+    private byte[] hCache;
 
-    public HibernateCacheClass(HibernateCache value) {
+    public HibernateCacheClass(byte[] value) {
         set(value);
     }
 
-    private void set(HibernateCache value) {
+    private void set(byte[] value) {
         this.hCache = value;
     }
 
-    public HibernateCache get() {
+    public byte[] get() {
         return hCache;
     }
 

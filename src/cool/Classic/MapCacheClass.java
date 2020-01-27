@@ -2,25 +2,23 @@ package cool.Classic;
 
 import java.io.Serializable;
 
-import cool.External.MapCache;
-
 public class MapCacheClass<K, V> implements Serializable 
 {
     /**
      *
      */
     private static final long serialVersionUID = 3553392527067749647L;
-    private MapCache<K, V> values;
+    private Map<K, V> values;
 
-    public MapCacheClass(MapCache<K, V> value) {
+    public MapCacheClass(Map<K, V> value) {
         set(value);
     }
 
-    private void set(MapCache<K, V> value) {
+    private void set(Map<K, V> value) {
         this.values = value;
     }
 
-    public MapCache<K, V> get() {
+    public Map<K, V> get() {
         return values;
     }
 

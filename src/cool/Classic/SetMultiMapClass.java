@@ -10,18 +10,18 @@ public class SetMultiMapClass<K, V> implements Serializable
      *
      */
     private static final long serialVersionUID = 1184364687031130822L;
-    private MultiMap<K, V> hCache;
+    private Map<K, V> values;
 
-    public SetMultiMapClass(MultiMap<K, V> value) {
+    public SetMultiMapClass(Map<K, V> value) {
         set(value);
     }
 
-    private void set(MultiMap<K, V> value) {
-        this.hCache = value;
+    private void set(Map<K, V> value) {
+        this.values = value;
     }
 
-    public MultiMap<K, V> get() {
-        return hCache;
+    public Map<K, V> get() {
+        return values;
     }
 
     public String toString() {

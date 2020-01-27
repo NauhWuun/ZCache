@@ -43,11 +43,11 @@ public final class HibernateCache implements Serializable, MessagePackable, Mess
 		return lazyPropertiesAreUnfetched;
 	}
 
-    public CacheEntry() {
+    public HibernateCache() {
 
     }
 
-	public CacheEntry(
+	public HibernateCache(
 			final Object[] state, 
 			final EntityPersister persister, 
 			final boolean unfetched, 
@@ -73,7 +73,7 @@ public final class HibernateCache implements Serializable, MessagePackable, Mess
 		return version;
 	}
 
-	CacheEntry(Serializable[] state, String subclass, boolean unfetched, Object version) {
+	HibernateCache(Serializable[] state, String subclass, boolean unfetched, Object version) {
 		this.disassembledState = state;
 		this.subclass = subclass;
 		this.lazyPropertiesAreUnfetched = unfetched;
