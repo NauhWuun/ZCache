@@ -83,5 +83,5 @@ public class LFUCache<K, V>
 			this.frequency = 1;
 			this.order = autoInc++;
 		}
-	};
+	}
 }
