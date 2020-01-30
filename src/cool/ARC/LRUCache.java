@@ -135,5 +135,5 @@ public class LRUCache<K, V>
 			this.key = key;
 			this.value = value;
 		}
-	};
+	}
 }
