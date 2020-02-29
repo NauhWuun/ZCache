@@ -5,7 +5,7 @@
     <artifactId>ZCached</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <description>ZCached = This Is New Cache Kit.</description>
+    <description>ZCached -> This Is New Cache Kit.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +19,7 @@
 
     <dependencies>
 
+        <!-- GeoIP Java -->
         <dependency>
             <groupId>com.github.tornaia</groupId>
             <artifactId>java-offline-geoip</artifactId>
